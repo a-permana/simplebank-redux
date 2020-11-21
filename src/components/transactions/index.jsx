@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../transactions/style.scss"
 import { logout } from '../../actions/userActions';
 import { deposit, withdrawal, transfer, saldo } from '../../actions/transactionActions'
+import FetchData from '../../actions/mutasiRekening';
 
 const Transactions = ({ history }) => {
   const dispatch = useDispatch();
@@ -249,6 +250,14 @@ const Transactions = ({ history }) => {
         </TabPanel>
         <TabPanel>
           {/* isi code mutasi rekening disini */}
+          <div className="d-flex justify-content-center my-4">
+            <table className="table text-center">
+            <h1>MUTASI REKENING</h1>
+            <tr>
+              <FetchData />
+            </tr>
+            </table>
+          </div>
         </TabPanel>
       </Tabs>
     </Container>
